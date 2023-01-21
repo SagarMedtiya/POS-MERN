@@ -4,24 +4,23 @@ const itemSchema= mongoose.Schema({
     name :{
         type: String,
         required: true,
-
     },
     price:{
         type:Number,
-        required: true
+        required: true,
     },
     category:{
         type: String,
-        required: true
+        required: false,
     },
     image:{
         type: String,
-        required: true
+        required: false,
     }
 
 },{timestamp: true})
 
 
-const Items = mongoose.model("Item", itemSchema)
+const itemModel = mongoose.model("Item", itemSchema)
 
-module.exports = Items
+module.exports = itemModel
