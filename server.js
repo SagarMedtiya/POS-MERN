@@ -4,22 +4,16 @@ const express = require("express")
 const morgan = require("morgan")
 const cors = require("cors")
 const PORT = process.env.PORT
-const url  = process.env.MONGO_URI
+const connectdb = require("./config/config")
 //rest object
 const app = express();
-const mongoose = require("mongoose")
-mongoose.set("strictQuery", false);
-mongoose.connect(url).then(()=>{
-    console.log('Connection Successful');
-}).catch((error)=>{     
-    console.log('Something went wrong', error)
-});
+
 
 //middlewares
 app.use(cors())
 app.use(express.json())
 app.use(morgan("dev"))
-
+connectdb();
 
 //routes
 app.get('/',(req,res)=>{
