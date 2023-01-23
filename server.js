@@ -5,20 +5,21 @@ const morgan = require("morgan")
 const cors = require("cors")
 const PORT = process.env.PORT
 const connectdb = require("./config/config")
+const bodyParser = require("body-parser")
 //rest object
 const app = express();
 
 
 //middlewares
 app.use(cors())
-app.use(express.json())
+app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false }));
 app.use(morgan("dev"))
 connectdb();
 
 //routes
-app.get('/',(req,res)=>{
-    res.send("<h1>POS backend</h1>")
-})
+app.use('/api/items',require('./routes/itemRoutes'))
 
 //listen
 app.listen(PORT,()=>{
