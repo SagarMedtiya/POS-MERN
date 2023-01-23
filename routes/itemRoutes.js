@@ -1,9 +1,9 @@
 const express = require("express");
-import { getItemController } from "../controllers/itemController";
-const router = express.Router();
+const itemcontroller = require("../controllers/itemController")
+const router = express.Router ();
 
 //routes
 //method - get, post, delete, 
-router.get('/get-item',getItemController)
-
+router.get('/get-item',itemcontroller.getItemController)
+router.post('/add-item',itemcontroller.addItemController)
 module.exports = router
