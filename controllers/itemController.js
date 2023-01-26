@@ -13,8 +13,11 @@ class itemController{
     async addItemController(req,res){
         try{
             const newItem = new itemModel(req.body);
-            await newItem.save();
-            res.status(201).send("Itewm created successfully");
+            await newItem.save()
+                    .then(data=>{
+                        res.status(200).send({message:"Item added successfully"})
+                    })
+                    
         }
         catch(error){
             res.status(400).send("error",error);
