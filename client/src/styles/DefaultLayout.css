@@ -26,3 +26,8 @@
     border-radius: 10px !important;
     margin-top : 10px !important;
 }
+.ant-layout-content{
+   margin:15px; 
+   background: #fff;
+   box-shadow: 0 0 3px #ccc;
+}
