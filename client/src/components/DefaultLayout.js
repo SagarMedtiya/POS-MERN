@@ -1,39 +1,24 @@
-import {
-	UserOutlined,
-    LogoutOutlined,
-    HomeOutlined,
-    CopyOutlined,
-    UnorderedListOutlined
-} from "@ant-design/icons";
+import {UserOutlined,LogoutOutlined,HomeOutlined,CopyOutlined,UnorderedListOutlined} from "@ant-design/icons";
 import { Layout, Menu, theme } from "antd";
 import React from "react";
 import "../styles/DefaultLayout.css";
 import { Link } from "react-router-dom";
-const { Header, Content, Footer, Sider } = Layout;
-const DefaultLayout = (children) => {
-	const {
-		token: { colorBgContainer },
-	} = theme.useToken();
+
+const { Header, Content, Sider } = Layout;
+
+const DefaultLayout = ({children}) => {
+	const {token: { colorBgContainer }} = theme.useToken();
 	return (
 		<Layout>
-			<Sider
-				breakpoint="lg"
-				collapsedWidth="0"
-				onBreakpoint={(broken) => {
-					console.log(broken);
-				}}
-				onCollapse={(collapsed, type) => {
+			<Sider breakpoint="lg" collapsedWidth="0" onBreakpoint={(broken) => {console.log(broken);}}
+                onCollapse={(collapsed, type) => {
 					console.log(collapsed, type);
-				}}
-			>
-				<div className="logo" >
+				}}>
+				
+                <div className="logo" >
                     <h1 className="text-center text-light font-weight-bold">POS</h1>
                 </div>
-				<Menu
-					theme="dark"
-					mode="inline"
-					defaultSelectedKeys={window.location.pathname}
-				>
+			    <Menu theme="dark" mode="inline" defaultSelectedKeys={window.location.pathname}>
                     <Menu.Item key ="/" icon={<HomeOutlined />}>
                         <Link to="/">Home</Link>
                     </Menu.Item>
@@ -58,8 +43,11 @@ const DefaultLayout = (children) => {
 						background: colorBgContainer,
 					}}
 				/>
-				<Content>
-                    
+				<Content style={{
+						padding:0,
+						background: colorBgContainer,
+					}}>
+                    {children}
                 </Content>
 			</Layout>
 		</Layout>
