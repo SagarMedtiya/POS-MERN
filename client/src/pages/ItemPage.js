@@ -1,8 +1,9 @@
 import React from 'react'
+import DefaultLayout from '../components/DefaultLayout'
 
 const ItemPage = () => {
   return (
-    <div>ItemPage</div>
+    <DefaultLayout>ItemPage</DefaultLayout>
   )
 }
 
