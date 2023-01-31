@@ -39,12 +39,12 @@ const DefaultLayout = ({children}) => {
 			<Layout>
 				<Header
 					style={{
-						padding: 0,
+						padding: 10,
 						background: colorBgContainer,
 					}}
 				/>
 				<Content style={{
-						padding:0,
+						padding:10,
 						background: colorBgContainer,
 					}}>
                     {children}
