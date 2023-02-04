@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 const { Header, Content, Sider } = Layout;
 
-const DefaultLayout = ({children}) => {
+const DefaultLayout = (props) => {
 	const {token: { colorBgContainer }} = theme.useToken();
-	return (
+        return (
 		<Layout>
 			<Sider breakpoint="lg" collapsedWidth="0" onBreakpoint={(broken) => {console.log(broken);}}
                 onCollapse={(collapsed, type) => {
@@ -47,7 +47,7 @@ const DefaultLayout = ({children}) => {
 						padding:10,
 						background: colorBgContainer,
 					}}>
-                    {children}
+                    {props.children}
                 </Content>
 			</Layout>
 		</Layout>
