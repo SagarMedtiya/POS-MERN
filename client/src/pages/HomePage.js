@@ -25,11 +25,11 @@ const HomePage = () => {
         <DefaultLayout>
             <Row>
                 {
-                    itemsData.map(item =>{
+                    itemsData.map(item =>(
                         <Col xs={24} lg={6} md={12} sm={6}>
                             <ItemList item ={item}/>
                         </Col>
-                    })
+                    ))
                 }
             </Row>
         </DefaultLayout>
