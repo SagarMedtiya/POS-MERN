@@ -5,6 +5,7 @@
   }
 .site-layout .site-layout-background{
     border-radius: 5px;
+
 }
 .ant-layout-has-sider{
     padding: 5px !important;
@@ -31,4 +32,5 @@
    background: #fff;
    box-shadow: 0 0 3px #ccc;
    padding: 10px;
+   overflow: auto;
 }
