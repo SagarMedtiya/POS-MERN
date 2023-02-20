@@ -1,12 +1,14 @@
 import {UserOutlined,LogoutOutlined,HomeOutlined,CopyOutlined,UnorderedListOutlined} from "@ant-design/icons";
 import { Layout, Menu, theme } from "antd";
 import React from "react";
+import {useSelector} from 'react-redux'
 import "../styles/DefaultLayout.css";
 import { Link } from "react-router-dom";
 
 const { Header, Content, Sider } = Layout;
 
 const DefaultLayout = (props) => {
+    
 	const {token: { colorBgContainer }} = theme.useToken();
         return (
 		<Layout>
