@@ -1,5 +1,6 @@
 import {UserOutlined,LogoutOutlined,HomeOutlined,CopyOutlined,UnorderedListOutlined} from "@ant-design/icons";
-import { Layout, Menu, theme } from "antd";
+import { Layout, Menu, theme  } from "antd";
+import { ShoppingCartOutlined, ShoppingOutlined } from '@ant-design/icons';
 import React from "react";
 import {useSelector} from 'react-redux'
 import "../styles/DefaultLayout.css";
@@ -8,7 +9,7 @@ import { Link } from "react-router-dom";
 const { Header, Content, Sider } = Layout;
 
 const DefaultLayout = (props) => {
-    
+    const {cartItems} = useSelector((state)=>state.cart)
 	const {token: { colorBgContainer }} = theme.useToken();
         return (
 		<Layout>
@@ -44,7 +45,12 @@ const DefaultLayout = (props) => {
 						padding: 10,
 						background: colorBgContainer,
 					}}
-				/>
+				>
+                    <div className="cart-items">
+                        <p>{cartItems.length}</p>
+                        <ShoppingCartOutlined />
+                    </div>    
+                </Header>
 				<Content style={{
 						padding:10,
 						background: colorBgContainer,
