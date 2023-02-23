@@ -10,6 +10,7 @@ const ItemList = ({item}) => {
         cover={<img alt={item.name} src={item.image} style={{height: 150}}/>}
         >
         <Meta title={item.name}  />
+  
         <div className='item-button'>
             <Button>Add To Cart</Button>            
         </div>
