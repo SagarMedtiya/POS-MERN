@@ -11,6 +11,7 @@ export const cartSlice = createSlice({
             const { cartItems } = action.payload;
             state.cartItems = cartItems;
         }
+        
     }
 })
 
