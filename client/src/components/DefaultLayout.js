@@ -1,15 +1,26 @@
 import {UserOutlined,LogoutOutlined,HomeOutlined,CopyOutlined,UnorderedListOutlined} from "@ant-design/icons";
 import { Layout, Menu, theme  } from "antd";
 import { ShoppingCartOutlined, ShoppingOutlined } from '@ant-design/icons';
-import React from "react";
-import {useSelector} from 'react-redux'
+import React, {useEffect} from "react";
+import {useSelector, useDispatch } from 'react-redux'
 import "../styles/DefaultLayout.css";
 import { Link } from "react-router-dom";
 
 const { Header, Content, Sider } = Layout;
 
 const DefaultLayout = (props) => {
-    const {cartItems} = useSelector((state)=>state.cart)
+    const {cartItems} = useSelector((state)=>state.cart);
+    const dispatch = useDispatch();
+    //to get local storage data
+    useEffect(() => {
+        (async()=>{
+            try {
+                
+            } catch (error) {
+                console.log(error);
+            }
+        })()
+    }, []);
 	const {token: { colorBgContainer }} = theme.useToken();
         return (
 		<Layout>
