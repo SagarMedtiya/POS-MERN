@@ -7,9 +7,9 @@ const ItemList = ({item}) => {
     const dispatch = useDispatch();
     async function handleAddToCart(){
         try {
-            
+            dispatch(setCart(item))
         } catch (error) {
-            
+            console.log(error)
         }
     }
 
